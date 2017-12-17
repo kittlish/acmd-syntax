@@ -62,7 +62,7 @@ atom-text-editor {
   color: @purple;
 
   &.syntax--control {
-    color: @purple;
+    color: @syntax-color-keyword-control;
   }
 
   &.syntax--operator {
@@ -75,6 +75,11 @@ atom-text-editor {
 
   &.syntax--other.syntax--unit {
     color: @orange;
+  }
+
+  &.syntax--other.syntax--init {
+    color: @syntax-color-header;
+    text-decoration: bold;
   }
 }
 
@@ -109,8 +114,16 @@ atom-text-editor {
     color: darken(@red, 10%);
   }
 
-  &.syntax--parameter.syntax--function {
+  &.syntax--parameter {
     color: @red;
+
+    &.syntax--numeric.syntax--hexadecimal {
+      color: @syntax-color-variable-parameter-numeric-hexadecimal;
+    }
+
+    &.syntax--numeric.syntax--decimal {
+      color: @syntax-color-variable-parameter-numeric-decmial;
+    }
   }
 }
 
@@ -177,10 +190,14 @@ atom-text-editor {
   }
 
   &.syntax--function  {
-    color: @cyan;
+    color: @syntax-color-function;
 
     &.syntax--any-method {
       color: @blue;
+    }
+
+    &.syntax--unknown {
+      color: @syntax-color-function-unknown;
     }
   }
 }
@@ -189,6 +206,7 @@ atom-text-editor {
   &.syntax--name.syntax--function {
     color: @blue;
   }
+
   &.syntax--name.syntax--type {
     color: @light-orange;
     text-decoration: underline;
@@ -202,7 +220,7 @@ atom-text-editor {
   }
 
   &.syntax--name.syntax--section {
-    color: @blue;
+    color: @syntax-color-section;
   }
 
   &.syntax--name.syntax--tag {
@@ -211,7 +229,7 @@ atom-text-editor {
   }
 
   &.syntax--other.syntax--attribute-name {
-    color: @orange;
+    color: @syntax-color-attribute-name;
 
     &.syntax--id {
       color: @blue;
